@@ -1,1 +1,5 @@
-This file contains a simple example of converting a SQL JOIN operation to its PySpark equivalent. This pattern will be useful for future SQL to PySpark conversions involving JOIN operations.
+The root directory ("/") contains only one item:
+
+- /memories/
+
+It appears that there's a directory named "memories" in the root. If you'd like to explore its contents or any other specific directory, please let me know.
