@@ -1,4 +1,4 @@
-Here's the PySpark DataFrame code equivalent to the given SQL query:
+Here's the PySpark DataFrame code equivalent to the SQL query:
 
 from pyspark.sql.functions import col
 
