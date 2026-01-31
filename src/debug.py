@@ -1,0 +1,1 @@
+This file contains a simple example of converting a SQL JOIN operation to its PySpark equivalent. This pattern will be useful for future SQL to PySpark conversions involving JOIN operations.
