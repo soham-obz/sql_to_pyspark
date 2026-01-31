@@ -1,5 +1,1 @@
-The root directory ("/") contains only one item:
-
-- /memories/
-
-It appears that there's a directory named "memories" in the root. If you'd like to explore its contents or any other specific directory, please let me know.
+There is a file named 'join.py' in the /memories/sql_patterns directory. This file likely contains patterns for converting SQL JOIN operations to PySpark DataFrame operations.
