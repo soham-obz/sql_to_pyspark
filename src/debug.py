@@ -1,1 +1,12 @@
-The PySpark code equivalent to the given SQL query has been written to the file "/pyspark_query.py". This code performs the same operation as the SQL query using PySpark's DataFrame API.
+Here's the PySpark DataFrame code equivalent to the given SQL query:
+
+from pyspark.sql.functions import col
+
+payments = spark.table("payments")
+subscriptions = spark.table("subscriptions")
+
+result = payments.alias("p").join(
+    subscriptions.alias("s"),
+    col("p.sub_id") == col("s.id"),
+    "inner"
+).select(col("p.id"), col("s.status"))
