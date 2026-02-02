@@ -1,7 +1,11 @@
-from pyspark.sql.functions import col
+from pyspark.sql import functions as F
 
-payments = spark.table("payments").alias("p")
-subscriptions = spark.table("subscriptions").alias("s")
-
-result = payments.join(subscriptions, col("p.sub_id") == col("s.id"), "inner") \
-    .select(col("p.id"), col("s.status"))
+# Assuming we have DataFrames 'payments' and 'subscriptions'
+result = payments.alias('p').join(
+    subscriptions.alias('s'),
+    payments.sub_id == subscriptions.id,
+    'inner'
+).select(
+    F.col('p.id'),
+    F.col('s.status')
+)
