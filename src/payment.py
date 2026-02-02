@@ -1,11 +1,10 @@
-from pyspark.sql import functions as F
+from pyspark.sql.functions import col
 
-# Assuming we have DataFrames 'payments' and 'subscriptions'
-result = payments.alias('p').join(
-    subscriptions.alias('s'),
-    payments.sub_id == subscriptions.id,
-    'inner'
-).select(
-    F.col('p.id'),
-    F.col('s.status')
+payments = spark.table("payments")
+subscriptions = spark.table("subscriptions")
+
+result = (
+    payments.alias("p")
+    .join(subscriptions.alias("s"), col("p.sub_id") == col("s.id"))
+    .select(col("p.id"), col("s.status"))
 )
