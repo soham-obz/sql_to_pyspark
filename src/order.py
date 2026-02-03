@@ -1,4 +1,3 @@
-from pyspark.sql import SparkSession
+orders = spark.table("orders")
 
-# Assuming SparkSession is already available as 'spark'
-df = spark.table("orders")
+result = orders
