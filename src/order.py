@@ -1,5 +1,4 @@
-from pyspark.sql.functions import col
+from pyspark.sql import SparkSession
 
-orders = spark.table("orders")
-
-result = orders.select("order_id").filter(col("status") == "DELIVERED")
+# Assuming SparkSession is already available as 'spark'
+df = spark.table("orders")
