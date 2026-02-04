@@ -1,3 +1,7 @@
-orders = spark.table("orders")
+from pyspark.sql.functions import col
 
-result = orders
+payments = spark.table("payments").alias("p")
+subscriptions = spark.table("subscriptions").alias("s")
+
+result = payments.join(subscriptions, col("p.sub_id") == col("s.id"), "inner") \
+    .select(col("p.id"), col("s.status"))
